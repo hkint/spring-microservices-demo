@@ -1,0 +1,20 @@
+server:
+  port: 9510
+eureka:
+  instance:
+    hostname: localhost
+    client:
+      registerWithEureka: false
+      fetchRegistry: false
+      serviceUrl:
+        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+spring:
+  output:
+    ansi:
+      enabled: always # ansi颜色输出
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0 # 分布式跟踪采样率
