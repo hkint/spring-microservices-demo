@@ -6,6 +6,6 @@ spring:
 ---
 spring:
   application:
-    name: discovery-service
+    name: department-service
   config:
     import: "optional:configserver:http://localhost:9500"

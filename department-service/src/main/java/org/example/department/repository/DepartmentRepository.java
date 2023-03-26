@@ -1,12 +1,10 @@
 package org.example.department.repository;
 
 import org.example.department.model.Department;
-import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
 public class DepartmentRepository {
     private List<Department> departments = new ArrayList<>();
 
