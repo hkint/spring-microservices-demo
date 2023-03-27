@@ -1,0 +1,23 @@
+version: '3.2'
+services:
+  #zipkin服务
+  zipkin:
+    image: openzipkin/zipkin:latest
+    container_name: zipkin-service
+    restart: "no"
+    ports:
+      - "9411:9411"
+    environment:
+      # 配置zipkin的存储方式为内存，也可以配置为mysql等其他存储方式
+      - STORAGE_TYPE=mem
+      # 配置zipkin的采样率为1，即全部采样
+      - SAMPLER_TYPE=const
+      - SAMPLER_PARAM=1
+      # 配置zipkin的日志级别为debug，方便调试
+      - JAVA_OPTS=-Dlogging.level.zipkin=DEBUG
+      - TZ=Asia/Shanghai
+    volumes:
+      - zipkin_data:/zipkin-data
+
+volumes:
+  zipkin_data: { }
