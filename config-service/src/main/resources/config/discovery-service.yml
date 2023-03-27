@@ -6,8 +6,8 @@ eureka:
     client:
       service-url:
         default-zone: http://${eureka.instance.hostname}:${server.port}/eureka/
-      register-with-eureka: true # 将Eureka Server自身注册到Eureka Server中
-      fetch-registry: true # 从Eureka Server中获取服务注册信息
+      register-with-eureka: false # 将Eureka Server自身注册到Eureka Server中
+      fetch-registry: false # 从Eureka Server中获取服务注册信息
     server:
       eviction-interval-timer-in-ms: 30000 # 清除不可用实例的时间间隔
       enable-self-preservation: true # 启用自我保护模式，防止误删除服务实例
